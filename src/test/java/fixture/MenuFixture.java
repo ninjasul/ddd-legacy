@@ -13,9 +13,9 @@ import kitchenpos.domain.Product;
 
 public class MenuFixture {
 	private static final String VALID_MENU_GROUP_NAME = "점심특선";
-	private static final String VALID_MENU_NAME = "버거세트";
+	public static final String VALID_MENU_NAME = "버거세트";
 	public static final String MENU_NAME_WITH_PROFANITY = "비속어가 포함된 메뉴명";
-	private static final int VALID_MENU_PRODUCT_QUANTITY = 2;
+	public static final int VALID_MENU_PRODUCT_QUANTITY = 2;
 	private static final BigDecimal VALID_MENU_PRICE = new BigDecimal("17.98");
 
 	public static MenuGroup createValidRequestMenuGroupWithName() {
@@ -42,6 +42,14 @@ public class MenuFixture {
 		menuGroup.setId(UUID.randomUUID());
 		menuGroup.setName(name);
 		return menuGroup;
+	}
+
+	public static MenuProduct createMenuProductWithProductAndQuantity(Product product, int quantity) {
+		MenuProduct menuProduct = new MenuProduct();
+		menuProduct.setProduct(product);
+		menuProduct.setProductId(product.getId());
+		menuProduct.setQuantity(quantity);
+		return menuProduct;
 	}
 
 	public static MenuProduct createValidMenuProductWithQuantity(int quantity) {

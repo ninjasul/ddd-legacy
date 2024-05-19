@@ -18,13 +18,12 @@ import kitchenpos.domain.MenuGroup;
 import kitchenpos.domain.MenuGroupRepository;
 
 class MenuGroupServiceInMemoryTest {
-	private MenuGroupRepository menuGroupRepository;
+	private MenuGroupRepository menuGroupRepository = new InMemoryMenuGroupRepository();
 
 	private MenuGroupService menuGroupService;
 
 	@BeforeEach
 	void setUp() {
-		menuGroupRepository = new InMemoryMenuGroupRepository();
 		menuGroupService = new MenuGroupService(menuGroupRepository);
 	}
 
