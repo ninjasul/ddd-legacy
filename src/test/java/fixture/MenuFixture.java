@@ -18,6 +18,18 @@ public class MenuFixture {
 	private static final int VALID_MENU_PRODUCT_QUANTITY = 2;
 	private static final BigDecimal VALID_MENU_PRICE = new BigDecimal("17.98");
 
+	public static MenuGroup createValidRequestMenuGroupWithName() {
+		MenuGroup validMenuGroup = new MenuGroup();
+		validMenuGroup.setName(VALID_MENU_GROUP_NAME);
+		return validMenuGroup;
+	}
+
+	public static MenuGroup createRequestMenuGroupWithName(String name) {
+		MenuGroup validMenuGroup = new MenuGroup();
+		validMenuGroup.setName(name);
+		return validMenuGroup;
+	}
+
 	public static MenuGroup createValidMenuGroup() {
 		MenuGroup validMenuGroup = new MenuGroup();
 		validMenuGroup.setId(UUID.randomUUID());
@@ -25,7 +37,7 @@ public class MenuFixture {
 		return validMenuGroup;
 	}
 
-	public static MenuGroup createMenuGroup(String name) {
+	public static MenuGroup createMenuGroupWithName(String name) {
 		MenuGroup menuGroup = new MenuGroup();
 		menuGroup.setId(UUID.randomUUID());
 		menuGroup.setName(name);
